@@ -1,0 +1,33 @@
+.lights {
+    width: 100px;
+    height: 340px;
+    border-radius: 10px;
+    background: black;
+    padding: 15px;
+}
+.disabled {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    opacity: 0.2;
+    transition: opacity 0.2s
+}
+.active {
+    opacity: 1;
+}
+.red__circle {
+    background: red;
+}
+.yellow__circle {
+    background: yellow;
+}
+.green__circle {
+    background: green;
+}
+button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px 15px;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Street light</h1>
+    <div class="lights">
+        <div class="red__circle disabled" :class="{active: current=='red'}"></div>
+        <div class="yellow__circle disabled" :class="{active: current=='yellow'}"></div>
+        <div class="green__circle disabled" :class="{active: current=='green'}"></div>
+    </div>
+    <button id="button">walk</button>
+    <p id="counter">10</p>
+    <script src="script.js"></script>
+</body>
+</html>
