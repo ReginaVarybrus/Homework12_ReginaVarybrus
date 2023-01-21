@@ -10,11 +10,11 @@
 <body>
     <h1>Street light</h1>
     <div class="lights">
-        <div class="red__circle disabled" :class="{active: current=='red'}"></div>
-        <div class="yellow__circle disabled" :class="{active: current=='yellow'}"></div>
-        <div class="green__circle disabled" :class="{active: current=='green'}"></div>
+        <div id="red" class="red__circle disabled" :class="{active: current=='red'}"></div>
+        <div id="yellow" class="yellow__circle disabled" :class="{active: current=='yellow'}"></div>
+        <div id="green" class="green__circle disabled" :class="{active: current=='green'}"></div>
     </div>
-    <button id="button">walk</button>
+    <button onClick="handlerWalk(); handleTimer()" id="button">walk</button>
     <p id="counter">10</p>
     <script src="script.js"></script>
 </body>
