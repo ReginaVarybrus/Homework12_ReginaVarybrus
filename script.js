@@ -16,7 +16,6 @@ const streetLightStates = {
         red.classList.add('active');
         yellow.classList.remove('active');
         green.classList.remove('active');
-        console.log('red');
       }
     },
     2: {
@@ -26,7 +25,6 @@ const streetLightStates = {
         yellow.classList.add('active');
         red.classList.remove('active');
         green.classList.remove('active');
-        console.log('yelow')
       }
     },
     3: {
@@ -36,7 +34,6 @@ const streetLightStates = {
         green.classList.add('active');
         yellow.classList.remove('active');
         red.classList.remove('active');
-        console.log('green')
       }
     },
     4: {
@@ -51,7 +48,7 @@ const streetLightStates = {
             }
         };
         
-        function handleTimer() {
+        function timer() {
             timer = clearInterval(timer);
             cntValue = 10;
             if (cntValue) {
@@ -60,14 +57,11 @@ const streetLightStates = {
             };
         };
 
-        function handlerWalk() {
-            red.classList.add('active');
-            yellow.classList.remove('active');
-            green.classList.remove('active');
-            console.log('red.paused');
-        }
-        handleTimer();
-        handlerWalk();        
+        red.classList.add('active');
+        yellow.classList.remove('active');
+        green.classList.remove('active');
+
+        timer();       
       }
     }
   };
@@ -75,20 +69,11 @@ const streetLightStates = {
   let currentState = 1;
   let pressed = false;
 
-  function a() {
+  function tickHendler() {
     if (pressed) {
       currentState = 4;
       pressed = false;
     }
-    streetLightStates[4].setState();
-    // 
-    currentState = streetLightStates[4].next;
-  }
-  function tickHendler() {
-    // if (pressed) {
-    //   currentState = 4;
-    //   pressed = false;
-    // }
     streetLightStates[currentState].setState();
     setTimeout(tickHendler, streetLightStates[currentState].interval);
     currentState = streetLightStates[currentState].next;
@@ -97,13 +82,9 @@ const streetLightStates = {
   function handlerWalk() {
     pressed = true;
   }
-  
-  function handleTimer() {
-    pressed = true;
-  }
+
 
 tickHendler();
-setTimeout(a, 0);
 
 
 // ======Мой код======
@@ -162,9 +143,4 @@ setTimeout(a, 0);
 //     circles[counter].classList.add('active');
 //     counter++;
 // };
-
-
-
-
-
 
