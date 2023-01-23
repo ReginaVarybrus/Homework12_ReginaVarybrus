@@ -4,6 +4,7 @@ const cnt = document.getElementById('counter');
 const red = document.getElementById('red');
 const yellow = document.getElementById('yellow');
 const green = document.getElementById('green');
+const btn = document.getElementById('button');
 
 let cntValue = 10;
 let timer;
@@ -45,7 +46,8 @@ const streetLightStates = {
             cnt.innerHTML = cntValue;
             if (cntValue <= 0) {
                 timer = clearInterval(timer);
-            }
+                btn.disabled = false; 
+            } 
         };
         
         function timer() {
@@ -61,7 +63,8 @@ const streetLightStates = {
         yellow.classList.remove('active');
         green.classList.remove('active');
 
-        timer();       
+        timer();  
+        btn.disabled = true;     
       }
     }
   };
@@ -79,10 +82,10 @@ const streetLightStates = {
     currentState = streetLightStates[currentState].next;
   }
 
-  function handlerWalk() {
-    pressed = true;
-  }
 
+  button.addEventListener('click', () => {
+    pressed = true; 
+  });
 
 tickHendler();
 
